@@ -1,0 +1,152 @@
+.isShow{
+  display: block;
+}
+
+.isHidden{
+  display: none;
+}
+
+.coverbg{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  top:0;
+  left: 0;
+  margin:auto;
+}
+
+.content{
+  margin-top:40%;
+  background-color: #F6F6F6;
+  padding: 20rpx;
+  text-align: left;
+  font-size: 1.2em;
+  word-break:break-all;
+}
+/* 记住 */
+.finishBtn{
+  bottom: -250rpx;
+  background: white;
+}
+.submitBtnL{
+  float: left;
+
+  bottom: -250rpx;
+  margin: 40rpx;
+  background: white;
+}
+.submitBtnR{
+  float: right;
+  bottom: -250rpx;
+
+  margin: 40rpx;
+  background: white;
+}
+/* 输入区域 */
+.textInput{
+  width: 94%;
+  height: 3em;
+  padding:20rpx;
+  font-size: 15px;
+  background:lightgray;
+
+}
+.count-section{
+  bottom: -220rpx;
+  background: red;
+}
+.textarea-wrp {
+  padding: 0 25rpx;
+  height: 44rpx;
+  background-color: blue;
+}
+.make1{
+  position: fixed;
+  bottom: 220rpx;
+  right: 0rpx;
+  z-index: 2;
+}
+
+.make2{
+  position: fixed;
+  bottom: 320rpx;
+  right: 0rpx;
+  z-index: 2;
+}
+
+.historyBg{
+  display: flex;
+  flex-direction: column;
+
+  align-content: flex-start;
+  /* justify-content: center; */
+  background-color: lightgray;
+  margin-top: 20rpx;
+  height: 480rpx;
+}
+.historyBtnContainer{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding:35rpx 40rpx;
+  margin: 20rpx;
+}
+
+.historyBtn{
+  text-align:center;
+  display:flex;
+  margin:18rpx;
+  align-items:center;
+  justify-content:center;
+  width: 120rpx;
+  height: 120rpx;
+
+}
+/* 分数 */
+#allDesc{
+
+  background: white;
+  text-align: center;
+
+}
+/* 记忆完成 */
+.isFinished{
+  background-color: green;
+}
+/* 生成新数字 */
+.isInit{
+  background-color: red;
+}
+/* 打完分数 */
+.isJudged{
+  background-color: gray;
+}
+
+.notice{
+  display: flex;
+  flex-flow: column wrap;
+
+}
+
+.noticeInner{
+  display: flex;
+  flex-direction: row;
+  padding: 25rpx;
+  align-items: center;
+  /* background-color: yellow; */
+}
+
+
+.showPoint{
+  display: flex;
+  justify-content: flex-end;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: purple;
+}
+
+.hiddenPoint{
+  display: none;
+}

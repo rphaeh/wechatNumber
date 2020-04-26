@@ -1,0 +1,72 @@
+.flex-container{
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+  text-align: center;
+}
+
+.header{
+  background-color: blue;
+  height: 200rpx;
+  align-items: center;
+}
+
+.body{
+  display: flex;
+}
+
+.main{
+  background: red;
+  flex:1;
+  height: 400rpx;
+  order: 2;
+}
+
+.left{
+  background-color: yellow;
+  order:1;
+  width: 100rpx;
+}
+
+.right{
+  background: yellow;
+  order: 3;
+  width: 100rpx;
+}
+
+.footer{
+  background: green;
+  height: 200rpx;
+  order: 4;
+}
+
+.wrap-learning{
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content{
+  background: blue;
+  width: 140rpx;
+  height: 190rpx;
+  margin: 10rpx 0rpx 0rpx 0rpx;
+
+}
+
+.pic{
+  background: orange;
+  height: 150rpx;
+  width: 140rpx;
+  margin-bottom: 0rpx;
+}
+
+.title{
+  color: gray;
+  text-align: center;
+  height: 35rpx;
+  font-size: 0.5em;
+  background: white;
+  margin-top: 0rpx;
+}

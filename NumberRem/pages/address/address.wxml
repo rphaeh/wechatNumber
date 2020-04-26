@@ -1,0 +1,22 @@
+<view class="flex-container">
+  <view class="header">header</view>
+  <view class="body">
+    <view class="main">main</view>
+    <block class="sider">
+      <view class="left">left</view>
+      <view class="right">right</view>
+    </block>
+  </view>
+  <view class="footer">
+    footer
+  </view>
+</view>
+
+<view class="wrap-learning">
+  <block wx:for="{{warpArr}}" wx:key="_index">
+    <view class="content">
+    <image class="pic" src="{{item.image}}"></image>
+    <view class="title">{{item.title}}</view>
+    </view>
+  </block>
+</view>

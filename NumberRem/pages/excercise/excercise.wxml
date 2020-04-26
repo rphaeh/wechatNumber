@@ -1,0 +1,74 @@
+<button class="make1" bindtap="makeNum" data-show="{{true}}">生成数字</button>
+<!-- <button class="make2" bindtap="remNum" data-show="{{true}}">记忆π</button> -->
+<picker mode="date" value="{{date}}" start="2019-04-01" bindchange="bindDateChange">
+  <a class="weui-btn weui-btn_default">选择想看日期</a>
+</picker>
+<!-- <button class="weui-btn weui-btn_default" id="showDatePicker">日期选择器</button> -->
+
+<block wx:if="{{showState == '记住'}}">
+  <!-- 弹框显示需要记忆内容 -->
+  <view class="coverbg {{coverIsShow == true?'isShow':'isHidden'}}" bindtap="hiddenBig" data-show="{{false}}">
+    <view class="content">
+      <view style="text-align:center;padding-bottom:10rpx">第{{excTimes}}组数字训练</view>
+      {{currentNumbers}}
+    </view>
+    <button class="finishBtn" bindtap="remember" data-status="{{'isFinished'}}" data-idx="{{excTimes-1}}">{{showState}}</button>
+  </view>
+
+</block>
+<block wx:elif="{{showState == '提交'}}">
+  <!-- 弹框显示需要输入内容 -->
+  <view class="coverbg {{coverIsShow == true?'isShow':'isHidden'}}">
+    <view class="content">
+      <view style="text-align:center;padding-bottom:10rpx">第{{excTimes}}组数字训练</view>
+      <view>
+        <textarea class="textInput" maxlength="-1" catchblur="input" data-idx="{{excTimes-1}}" auto-height></textarea>
+      </view>
+      <view style="font-size:13px;text-align:center;padding-top:10rpx">数字4个一组，用”-”分割，用“.”作为占位</view>
+    </view>
+    <button class="submitBtnL" bindtap="submit" data-status="{{'isJudged'}}" data-show="{{false}}" data-idx="{{excTimes-1}}">{{showState}}</button>
+    <button class="submitBtnR" bindtap="submit" data-status="{{'isFinished'}}" data-show="{{false}}" data-idx="{{excTimes-1}}">跳过</button>
+  </view>
+</block>
+<block wx:else>
+  <!-- 弹框显示需要记忆内容 -->
+  <view class="coverbg {{coverIsShow == true?'isShow':'isHidden'}}" bindtap="hiddenBig" data-show="{{false}}">
+    <view class="content">
+      <view style="padding-bottom:10rpx;font-size:15px">第{{excTimes}}组数字，共30组，总分30分，得分 {{currentPoint}} 分</view>
+      {{currentNumbers}}
+      <view>{{inputNumbers}}</view>
+    </view>
+
+  </view>
+</block>
+
+<!-- 历史块展示 -->
+<view class="historyBg">
+  <view id="allDesc">总组数：{{allNumbers.length}}组，满分💯，总分{{allExcPoint}}分</view>
+  <view class="historyBtnContainer">
+      <block wx:for="{{allNumbers}}" wx:key="_index">
+          <view class="historyBtn {{item.status}}" bindtap="showHistory" data-show="{{true}}" data-idx="{{item.serial}}">
+
+              <!-- <view class="btnBidge {{item.status == 'isJudged' ? 'showPoint' : 'hiddenPoint'}}">{{item.allPoint}}</view> -->
+              {{item.serial+1}}
+          </view>
+     </block>
+  </view>
+</view>
+<!-- 任务说明 -->
+<view class="notice">
+  <text style="padding:25rpx">=======颜色值代表意义=======</text>
+  <view class="noticeInner">
+    <view style="background:red;width:30rpx;height:30rpx;margin-right:10rpx"></view>
+    <text>当天新产生数字，需要记忆</text>
+  </view>
+  <view class="noticeInner">
+    <view style="background:green;width:30rpx;height:30rpx;margin-right:10rpx"></view>
+    <text>当天已经记忆数字</text>
+  </view>
+  <view class="noticeInner">
+    <view style="background:gray;width:30rpx;height:30rpx;margin-right:10rpx"></view>
+    <text>当天已经打分数字</text>
+  </view>
+  <text style="padding:25rpx">按正确顺序连续4个数字正确为一分</text>
+</view>

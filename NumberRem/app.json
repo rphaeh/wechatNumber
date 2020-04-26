@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/excercise/excercise",
+    "pages/numbers/numbers"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar":{
+    "list": [{
+        "pagePath":"pages/excercise/excercise",
+        "text":"练习"
+        },
+      {
+        "pagePath":"pages/numbers/numbers",
+        "text":"数字"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
